@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
+// bringing in an external module that will hold our API calls. 
 const API = require('./utils')
 
 class App extends Component {
+  // set some initial values for state. 
   state = {
     myThrow: "",
     lambda: "",
@@ -12,10 +14,14 @@ class App extends Component {
 
   // makes a call to my own AWS API endpoint and should return a JSON object telling me if I won or lost
   playLambdaRPS = (myThrow) => {
+    // set my value to the local state
     this.setState({myThrow})
+
+    // make the call to the AWS lambda function with my choice
     API.playRPS(myThrow)
     .then(response => {
-      console.log(response)
+      // handle the response from the Lambda function. We're putting the response in state, since our component 
+      //  will react to the data in state and update the appropriate values in our app. 
       this.setState({
         lambda : response.data.lambda,
         result : response.data.result
@@ -23,6 +29,7 @@ class App extends Component {
     })
   }
 
+  // OUR JSX is down here...
   render() {
     return (
       <div className="App">
@@ -34,6 +41,7 @@ class App extends Component {
           <div className = 'container'>
             <div className='row justify-content-center'>
                   <div className="col-4">
+                    {/* Rock Button */}
                     <button type="button" 
                             test-id="rock-button"
                             className="btn btn-dark rock-button"
@@ -42,6 +50,7 @@ class App extends Component {
                     </button>
                   </div>
                   <div className="col-4">
+                    {/* Paper Button */}
                     <button type="button" 
                             test-id="paper-button"
                             className="btn btn-dark paper-button"
@@ -50,6 +59,7 @@ class App extends Component {
                     </button>
                   </div>
                   <div className="col-4">
+                    {/* Scissors Button */}
                     <button type="button" 
                             test-id="rock-button"
                             className="btn btn-dark scissors-button"
@@ -66,9 +76,13 @@ class App extends Component {
                     LAMBDA THROW:
                 </div>
                 <div className="row justify-content-center lambda-throw">
+                  {/* This div tag shows the response from the lambda function directly from state */}
                   <span>{this.state.lambda.toUpperCase()}</span>  
                 </div>
                 <div className="row justify-content-center lambda-result">
+                  {/* This div tag contains a series of ternery operators to helps parse the result from state and 
+                        show a custom message for each possible outcome, including a final fail for the empty string 
+                        from the initial state.  */}
                   { (this.state.result === "win" ? 
                     <span>YOU WIN!</span>
                     : 
@@ -83,7 +97,6 @@ class App extends Component {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Amazon Lambda Rock-Paper-Scissors Game
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+In response to an excercise given by a prospective employer, I decided to dip my toe into the world of AWS Lambda. This proved to be an interesting and unique challenge, as I have never even looked in the AWS toolkit before creating an account a few days ago. Thankfully, AWS allows me to program using Node.js, which is a language I am already quite familiar with, and allowed me less of a steep learning curve. 
 
-### `yarn start`
+### Using AWS Lambda
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+My first lambda function was pretty basic, just returning a JSON object with info about myself in it. Then, one morning at about 6am, I decided to take on a project with a slightly larger scope: Rock-Paper-Scissors. What I would do is have the ASW Lambda function take a HTTP POST input with the user's choice, generate a random choice, and finally return the function's choice and the result of the contest. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Example Input**
+`{ myThrow: "paper" }`
 
-### `yarn test`
+**Example Output**
+`{
+    "lambda": "rock",
+    "result": "win"
+}`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this example, the player chose "paper", the lambda function generated "rock", and since "paper covers rock" the player is awarded the win. All of the strings should always be lowercase, and result will always be "win", "lose", or "draw" in the case that both player and lambda function generate the same value. 
 
-### `yarn build`
+### Building in React
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+What I did after I built the lambda function is to build a serverless React app that will interact with the lambda function. I kept it basic, but functional. It turned out to be a really fun little project, and I had a really fun time building it. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Nathan Hill
