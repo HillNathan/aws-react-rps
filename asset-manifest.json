@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/aws-react-rps/static/css/main.022cb35e.chunk.css",
-    "main.js": "/aws-react-rps/static/js/main.1fda975b.chunk.js",
-    "main.js.map": "/aws-react-rps/static/js/main.1fda975b.chunk.js.map",
+    "main.css": "/aws-react-rps/static/css/main.e27c755d.chunk.css",
+    "main.js": "/aws-react-rps/static/js/main.86c8b407.chunk.js",
+    "main.js.map": "/aws-react-rps/static/js/main.86c8b407.chunk.js.map",
     "runtime-main.js": "/aws-react-rps/static/js/runtime-main.275e5f3a.js",
     "runtime-main.js.map": "/aws-react-rps/static/js/runtime-main.275e5f3a.js.map",
     "static/js/2.f55a8840.chunk.js": "/aws-react-rps/static/js/2.f55a8840.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.4686db93.chunk.js": "/aws-react-rps/static/js/3.4686db93.chunk.js",
     "static/js/3.4686db93.chunk.js.map": "/aws-react-rps/static/js/3.4686db93.chunk.js.map",
     "index.html": "/aws-react-rps/index.html",
-    "static/css/main.022cb35e.chunk.css.map": "/aws-react-rps/static/css/main.022cb35e.chunk.css.map",
+    "static/css/main.e27c755d.chunk.css.map": "/aws-react-rps/static/css/main.e27c755d.chunk.css.map",
     "static/js/2.f55a8840.chunk.js.LICENSE.txt": "/aws-react-rps/static/js/2.f55a8840.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.275e5f3a.js",
     "static/js/2.f55a8840.chunk.js",
-    "static/css/main.022cb35e.chunk.css",
-    "static/js/main.1fda975b.chunk.js"
+    "static/css/main.e27c755d.chunk.css",
+    "static/js/main.86c8b407.chunk.js"
   ]
 }
